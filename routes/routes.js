@@ -10,14 +10,28 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     // if (err) throw er;
     console.log("Connected!");
+    // var sql = "CREATE TABLE user (firstName VARCHAR(255), score Int)";
+    // connection.query(sql, function(err, result){
+    //     // if (err) throw (err);
+    //     console.log("Table Created")
+    // });
+
+    // var add = "INSERT INTO user (firstName, score) VALUES(Jannet, 4)";
+    // connection.query(add, function(err, result){
+    //     // if (err) throw err;
+    //     console.log("1 record inserted");
+    // });
+
+    connection.query("SELECT * FROM user", function(err, result, fields){
+        if(err) console.log(err);
+        console.log(result);
+    })
+
 });
 
 // connection.connect();
 
 //code here what needs to go into the sql
-
-
-//connection.end();
 
 connection.end();
 

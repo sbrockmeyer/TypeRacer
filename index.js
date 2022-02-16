@@ -13,4 +13,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', routes.index);
 app.get('/leaderboard', routes.leaderboard);
 
-app.listen(3000);
+const web = app.listen(3000, function (){
+    console.log('Node web server is running');
+})
+
+// app.listen(3000);
