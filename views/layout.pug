@@ -6,10 +6,14 @@ html
     body
         header
             nav
+                div
+                    i(class='fa fa-bars')
                 ul
                     each item in config.menu
                         a(href=item[1])
                             div(class='menu_item')
                                 li(id=item[0]) #{item[0]}
+            script(src='script.js')
+            
         h3(class="title")=title
         block content
