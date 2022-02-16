@@ -1,0 +1,9 @@
+.menu_item {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    list-style: none;
+    
+    border: 1px #000 solid;
+    border-radius: 1rem;
+}
