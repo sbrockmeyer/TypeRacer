@@ -11,5 +11,6 @@ app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', routes.index);
+app.get('/leaderboard', routes.leaderboard);
 
 app.listen(3000);
