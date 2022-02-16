@@ -8,11 +8,11 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err) {
-    if (err) throw err;
+    // if (err) throw er;
     console.log("Connected!");
 });
 
-connection.connect();
+// connection.connect();
 
 //code here what needs to go into the sql
 
