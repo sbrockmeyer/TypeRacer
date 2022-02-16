@@ -16,5 +16,8 @@ connection.connect(function(err) {
 
 //code here what needs to go into the sql
 
-
 connection.end();
+
+exports.index = (req, res) => {
+    
+}
