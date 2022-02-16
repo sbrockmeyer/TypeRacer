@@ -19,9 +19,9 @@ connection.connect(function(err) {
 
 //connection.end();
 
-const config = require('../config');
-
 connection.end();
+
+const config = require('../config');
 
 exports.index = (req, res) => {
     res.render('index', {
