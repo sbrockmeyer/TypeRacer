@@ -1,6 +1,7 @@
 {
     "menu": [
         ["Home", "/"],
-        ["Leaderboard", "/leaderboard"]
+        ["Leaderboard", "/leaderboard"],
+        ["Sign Up", "/signup"]
     ]
 }
