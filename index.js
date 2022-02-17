@@ -10,12 +10,18 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(cookieParser('whatever'));
+
+app.use(expressSession({
+    secret: 'c001b34n5',
+    saveUninitialized: true,
+    resave: true
+}));
+
+// const newUserUrlParser = express.urlencoded({extended: false});
+
 
 app.get('/', routes.index);
 app.get('/leaderboard', routes.leaderboard);
 
-const web = app.listen(3000, function (){
-    console.log('Node web server is running');
-})
-
-// app.listen(3000);
+app.listen(3000);
