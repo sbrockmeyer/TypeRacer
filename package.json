@@ -18,10 +18,11 @@
   },
   "homepage": "https://github.com/sbrockmeyer/TypeRacer#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "express": "^4.17.2",
-    "mysql": "^2.18.1",
-    "nodejs": "*",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.2",
     "pug": "^3.0.2"
   }
 }
