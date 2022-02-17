@@ -3,6 +3,7 @@ const pug = require('pug');
 const path = require('path');
 const routes = require('./routes/routes');
 const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
 
 const app = express();
 
