@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const config = require('../config');
 const bcrypt = require('bcryptjs');
 
-mongoose.connect('',{
+mongoose.connect('mongodb+srv://username:pass_word@pro150.rgfcp.mongodb.net/TypeRacerDB?retryWrites=true&w=majority',{
     useUnifiedTopology: true,
     newUserUrlParser: true
 })
