@@ -24,9 +24,6 @@ app.use(expressSession({
     resave: true
 }));
 
-// const newUserUrlParser = express.urlencoded({extended: false});
-
-
 app.get('/', routes.index);
 app.get('/leaderboard', routes.leaderboard);
 app.get('/signup', routes.signup);

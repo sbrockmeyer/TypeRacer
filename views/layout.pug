@@ -2,18 +2,24 @@ doctype
 html 
     head 
         title=title
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
         link(rel='stylesheet' href='/style.css')
     body
         header
-            nav
-                div
-                    i(class='fa fa-bars')
-                ul
-                    each item in config.menu
-                        a(href=item[1])
-                            div(class='menu_item')
-                                li(id=item[0]) #{item[0]}
-            script(src='script.js')
+            div(class='container')
+                div(class='row')
+                    div(class='logo')
+                        a(href='#') Logo
+                    nav
+                        ul
+                            li
+                                a(href='/' class='active') Home
+                            li
+                                a(href='/leaderboard') Leaderboard
+                            li
+                                a(href='/signup') Sign Up
             
-        h3(class="title")=title
+        h1(class="title")=title
         block content
+
+        script(src='script.js')

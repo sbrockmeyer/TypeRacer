@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const config = require('../config');
 const bcrypt = require('bcryptjs');
 
 mongoose.connect('mongodb+srv://username:pass_word@pro150.rgfcp.mongodb.net/TypeRacerDB?retryWrites=true&w=majority', {
@@ -20,22 +19,19 @@ let User = mongoose.model('Users_Collection', userSchema)
 
 exports.index = (req, res) => {
     res.render('index', {
-        title: 'Home Page',
-        config
+        title: 'Home Page'
     });
 };
 
 exports.leaderboard = (req, res) => {
     res.render('leaderboard', {
-        title: 'Leaderboard Page',
-        config
+        title: 'Leaderboard Page'
     });
 };
 
 exports.signup = (req, res) => {
     res.render('signup', {
-        title: 'Sign Up Page',
-        config
+        title: 'Sign Up'
     });
 };
 
