@@ -64,3 +64,21 @@ nav ul li a {
     font-size: 16px;
     color: #ffffff;
 }
+
+.quote-display {
+    margin:auto;
+    background-color: white;
+    padding: .5rem;
+    border:#2f3240 2px solid;
+}
+
+.quote-input {
+    margin:auto;
+    background-color: white;
+    padding: .5rem;
+    border: #2f3240 2px solid;
+}
+
+.correct {
+    color:green;
+}
