@@ -8,12 +8,11 @@
     box-sizing: border-box;
 }
 
-h1 {
-
-}
-
-p {
-    
+.btn {
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 50px;
 }
 
 body {
