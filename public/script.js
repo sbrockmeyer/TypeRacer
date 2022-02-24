@@ -2,6 +2,21 @@ const testQuote = 'Mary had a little lamb';
 const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
 const recentCorrectPhraseArray = [];
+const quoteThing = "./quotes.json";
+
+
+function getQuote() {
+    fetch(quoteThing)
+    .then(response => response.json())
+    .then(data => data.quote)
+}
+
+async function nextQuote(){
+    const q = await getQuote()
+    console.log(q);
+}
+
+nextQuote();
 
 quoteInputElement.addEventListener('input', () => {
     const quoteArray = quoteDisplayElement.querySelectorAll('span');

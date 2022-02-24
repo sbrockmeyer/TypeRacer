@@ -56,7 +56,13 @@ nav ul li a {
     margin: auto;
     background-color: white;
     padding: .5rem;
-    border: #2f3240 2px solid;
+    border: #7f87ad 2px solid;
+    resize: none;
+    outline: none;
+}
+
+.quote-input:focus{
+    border-color: #2d3141;
 }
 
 .btn {
@@ -69,3 +75,9 @@ nav ul li a {
 .correct {
     color:green;
 }
+
+/* .container2{
+    border: 5px solid #456;
+    padding: 10px;
+    margin: 10px;
+} */

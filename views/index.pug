@@ -1,7 +1,8 @@
 extends layout
 block content
-    div(class='quote-display' id='quote')
-    textarea(class='quote-input' id='quoteInput')
-    br
-    button(onclick='renderQuote()' class='btn') Click to Begin
+    div(class="container2")
+        div(class='quote-display' id='quote')
+        textarea(class='quote-input' id='quoteInput' autofocus)
+        br
+        button(onclick='renderQuote()' class='btn') Click to Begin
     script(src='script.js')
