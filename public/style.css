@@ -1,3 +1,4 @@
+/* Nav bar CSS */
 :root {
     --navbar-bg-color: #2f3240;
 }
@@ -6,13 +7,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-
-.btn {
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    height: 50px;
 }
 
 body {
@@ -30,21 +24,6 @@ header {
     margin: auto;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo, nav {
-    padding: 0px 20px;
-    color: #ffffff;
-}
-
-.logo a {
-    font-size: 30px;
-}
-
 ul {
     list-style: none;
 }
@@ -55,7 +34,7 @@ a {
 
 nav ul li {
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 nav ul li a {
@@ -63,6 +42,8 @@ nav ul li a {
     font-size: 16px;
     color: #ffffff;
 }
+
+/* Typing Game CSS */
 
 .quote-display {
     margin:auto;
@@ -76,6 +57,13 @@ nav ul li a {
     background-color: white;
     padding: .5rem;
     border: #2f3240 2px solid;
+}
+
+.btn {
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 50px;
 }
 
 .correct {
