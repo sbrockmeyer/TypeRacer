@@ -46,14 +46,14 @@ nav ul li a {
 /* Typing Game CSS */
 
 .quote-display {
-    margin:auto;
+    margin: auto;
     background-color: white;
     padding: .5rem;
     border:#2f3240 2px solid;
 }
 
 .quote-input {
-    margin:auto;
+    margin: auto;
     background-color: white;
     padding: .5rem;
     border: #2f3240 2px solid;
