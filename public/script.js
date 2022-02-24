@@ -1,14 +1,4 @@
-// $('nav div').click(function() {
-//     $('ul').slideToggle();
-// });
-
-// $(window).resize(function() {
-//     if ($(window).width() > 775) {
-//         $('ul').removeAttr('style');
-//     }
-// });
-
-const testQuote = 'Mary had a little lamb 123';
+const testQuote = 'Mary had a little lamb';
 const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
 const recentCorrectPhraseArray = [];

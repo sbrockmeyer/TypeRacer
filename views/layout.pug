@@ -7,17 +7,14 @@ html
     body
         header
             div(class='container')
-                div(class='row')
-                    div(class='logo')
-                        a(href='#') Logo
-                    nav
-                        ul
-                            li
-                                a(href='/' class='active') Home
-                            li
-                                a(href='/leaderboard') Leaderboard
-                            li
-                                a(href='/signup') Sign Up
+                nav
+                    ul
+                        li
+                            a(href='/' class='active') Home
+                        li
+                            a(href='/leaderboard') Leaderboard
+                        li
+                            a(href='/signup') Sign Up
             
         h1(class="title")=title
         block content
