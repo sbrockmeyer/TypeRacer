@@ -3,20 +3,20 @@ const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
 const recentCorrectPhraseArray = [];
 const quoteThing = "./quotes.json";
-
+quoteInputElement.value = null;
 
 function getQuote() {
-    fetch(quoteThing)
+    return fetch(quoteThing)
     .then(response => response.json())
-    .then(data => data.quote)
+    .then(data => retrieveFromJsonArray(data).quote);
 }
 
-async function nextQuote(){
-    const q = await getQuote()
-    console.log(q);
+function retrieveFromJsonArray(data) {
+    let num = Math.floor(Math.random() * data.length);
+    let quote = data[num];
+    return (quote);
 }
 
-nextQuote();
 
 quoteInputElement.addEventListener('input', () => {
     const quoteArray = quoteDisplayElement.querySelectorAll('span');
@@ -28,14 +28,21 @@ quoteInputElement.addEventListener('input', () => {
         if(char == null) {
             charSpan.classList.remove('correct');
             quoteInputElement.value = recentCorrectPhraseArray.join('');
+            charSpan.classList.remove('current');
             correct = false;
 
         } else if (char === charSpan.innerHTML) {
+            if (recentCorrectPhraseArray[recentCorrectPhraseArray.length-1] === char) {
+                charSpan.classList.add('current');
+            } else {
+                charSpan.classList.remove('current');
+            }
             charSpan.classList.add('correct');
             recentCorrectPhraseArray.push(char);
             correct = true;
         } else {
             charSpan.classList.remove('correct');
+            charSpan.classList.remove('current');
             correct = false;
             quoteInputElement.value = recentCorrectPhraseArray.join('');
         }
@@ -43,9 +50,8 @@ quoteInputElement.addEventListener('input', () => {
     recentCorrectPhraseArray.length = 0;
 })
 
-function renderQuote() {
-    recentCorrectPhrase = '';
-    const quote = testQuote;
+async function renderQuote() {
+    const quote = await getQuote();
     quoteDisplayElement.innerHTML = '';
     quote.split('').forEach(character => {
         const charSpan = document.createElement('span');
