@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose');   
 const bcrypt = require('bcryptjs');
 
 mongoose.connect('mongodb+srv://username:pass_word@pro150.rgfcp.mongodb.net/TypeRacerDB?retryWrites=true&w=majority', {
@@ -36,9 +36,11 @@ exports.signup = (req, res) => {
 };
 
 exports.createUser = (req, res) => {
+    let salt = bcrypt.genSaltSync(10);
+    let hashPass = bcrypt.hashSync(req.body.password, salt);
     let user = new User({
         username: req.body.username,
-        password: req.body.password
+        password: hashPass
     });
     user.save((err, user) => {
         if (err) return console.error(err);

@@ -43,6 +43,26 @@ nav ul li a {
     color: #ffffff;
 }
 
+table{
+    padding: 5px;
+    margin: auto;
+    background-color: #9fadb8;
+
+    /* border:2px solid #2d3141; */
+}
+th{
+    border:2px solid #2d3141;
+    background-color: #565c75;
+    padding: 15px;
+    color: #fff;
+}
+td{
+    border:2px solid #2d3141;
+    background-color: #939ece;
+    padding: 10px;
+    text-align: center;
+}
+
 /* Typing Game CSS */
 
 .quote-display {
@@ -75,9 +95,3 @@ nav ul li a {
 .correct {
     color:green;
 }
-
-/* .container2{
-    border: 5px solid #456;
-    padding: 10px;
-    margin: 10px;
-} */
