@@ -44,7 +44,8 @@ nav ul li a {
     color: #ffffff;
 }
 
-<<<<<<< Updated upstream
+/* Leaderboard Page CSS */
+
 table{
     padding: 5px;
     margin: auto;
@@ -63,10 +64,6 @@ td{
     background-color: #939ece;
     padding: 10px;
     text-align: center;
-=======
-.title {
-    margin-left: 30px;
->>>>>>> Stashed changes
 }
 
 /* Typing Game CSS */
