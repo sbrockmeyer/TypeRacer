@@ -19,19 +19,25 @@ let User = mongoose.model('Users_Collection', userSchema)
 
 exports.index = (req, res) => {
     res.render('index', {
-        title: 'Home Page'
+        title: 'Home'
     });
 };
 
 exports.leaderboard = (req, res) => {
     res.render('leaderboard', {
-        title: 'Leaderboard Page'
+        title: 'Leaderboard'
     });
 };
 
-exports.signup = (req, res) => {
-    res.render('signup', {
-        title: 'Sign Up'
+exports.login = (req, res) => {
+    res.render('login', {
+        title: 'Login'
+    });
+};
+
+exports.create = (req, res) => {
+    res.render('Create', {
+        title: 'Create Account'
     });
 };
 
@@ -46,5 +52,5 @@ exports.createUser = (req, res) => {
         if (err) return console.error(err);
         console.log(req.body.username + ' added.');
     });
-    res.redirect('/');
+    res.redirect('/login');
 };

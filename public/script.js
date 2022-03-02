@@ -1,3 +1,5 @@
+//Typing Game Script
+
 const testQuote = 'Mary had a little lamb';
 const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
@@ -25,7 +27,7 @@ quoteInputElement.addEventListener('input', () => {
 
     quoteArray.forEach((charSpan, index) => {
         const char = valueArray[index];
-        if(char == null) {
+        if (char == null) {
             charSpan.classList.remove('correct');
             quoteInputElement.value = recentCorrectPhraseArray.join('');
             charSpan.classList.remove('current');
@@ -60,3 +62,46 @@ async function renderQuote() {
     })
     quoteInputElement.value = null;
 }
+
+//Login Page Script
+
+//-----
+
+// const username = document.getElementById('name');
+// const password = document.getElementById('pass');
+// const pw_verify = document.getElementById('pass-verify');
+
+// const errors = document.getElementById('errors');
+
+// let error_msg = "";
+// let no_errors = true;
+
+// const name_patt = /\S/;
+// const pass_patt = /\S/;
+
+// const validate = evt => {
+//     error_msg = "";
+//     no_errors = true;
+
+//     if(pw_verify.value != password.value) {
+//         error_msg = 'Must match Password';
+//         no_errors = false;
+//     };
+
+//     if(!pass_patt.test(password.value)) {
+//         error_msg = 'Password cannot be blank.';
+//         no_errors = false;
+//     };
+
+//     if(!name_patt.test(username.value)) {
+//         error_msg = 'Username cannot be blank.';
+//         no_errors = false;
+//     };
+
+//     errors.value = error_msg;
+// }
+
+// const mySubmit = () => {
+//     validate();
+//     return no_errors;
+// }

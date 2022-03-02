@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    form(method='post' action='/create')
+            br
+            p Enter a Username:
+                br
+                input(type='text' name='username' id='name')
+            br
+            p Enter a Password:
+                br
+                input(type='password' name='password' id='pass')
+            br
+            p Confirm Password:
+                br
+                input(type='password' id='pass_verify')
+            br
+            p
+                br
+                input(type='submit' value='Create Account')
+    br
+    div(id='errors') Error Message Here
+
+    script(src='script.js')

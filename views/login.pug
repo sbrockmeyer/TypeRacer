@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    form(method='post' action='/login')
+        br
+        p(class='question') Username:
+            br
+            input(type='text')
+        p(class='question') Password:
+            br
+            input(type='password')
+        br
+        p
+            br
+            input(type='submit' value='Login')
+        p
+            br
+            a(href='/create') New user? Create an account
+    
+    script(src='script.js')

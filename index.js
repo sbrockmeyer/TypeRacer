@@ -26,7 +26,8 @@ app.use(expressSession({
 
 app.get('/', routes.index);
 app.get('/leaderboard', routes.leaderboard);
-app.get('/signup', routes.signup);
-app.post('/signup', urlencodedParser, routes.createUser);
+app.get('/login', routes.login);
+app.get('/create', routes.create);
+app.post('/create', urlencodedParser, routes.createUser);
 
 app.listen(3000);
