@@ -8,7 +8,7 @@ const quoteThing = "./quotes.json";
 quoteInputElement.value = null;
 
 function getQuote() {
-    return fetch(quoteThing)
+    return fetch(document.querySelector('input[name="difficulty_setting"]:checked').value)
     .then(response => response.json())
     .then(data => retrieveFromJsonArray(data).quote);
 }

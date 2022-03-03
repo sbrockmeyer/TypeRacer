@@ -6,5 +6,14 @@ block content
         textarea(class='quote-input' id='quoteInput' autofocus)
         br
         button(onclick='renderQuote()' class='btn') Click to Begin
+        br
+        input(type='radio', name='difficulty_setting', id='easy', value='./easyquotes.json')
+        label(for='easy') Easy
+        br
+        input(type='radio', name='difficulty_setting', id='medium', value='./mediumquotes.json')
+        label(for='medium') Medium
+        br
+        input(type='radio', name='difficulty_setting', id='hard', value='./hardquotes.json')
+        label(for='hard') Hard
     script(src='script.js')
     
