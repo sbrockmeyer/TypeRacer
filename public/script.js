@@ -74,7 +74,7 @@ function gameOver() {
     canType = false;
     quoteDisplayElement.innerHTML = "Game Over";
     quoteInputElement.value = recentCorrectPhraseArray.join('');
-    cancelInterval(timer);
+    clearInterval(timer);
 }
 
 function startTimer() {
@@ -83,7 +83,12 @@ function startTimer() {
 }
 
 function updateTimer() {
-    timeRemaining = timeRemaining - 1;
+    timeRemaining = timeRemaining - 1; 
+    if (timeRemaining >= 0) {
+
+    } else {
+        gameOver();
+    }    
 
 }
 
