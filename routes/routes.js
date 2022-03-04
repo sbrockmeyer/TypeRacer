@@ -13,9 +13,11 @@ mdb.once('opne', callback => { });
 let userSchema = mongoose.Schema({
     username: String,
     password: String,
+    timesplayed: Number,
+    wpm: Number
 });
 
-let User = mongoose.model('Users_Collection', userSchema)
+let User = mongoose.model('Users_Collection', userSchema);
 
 exports.index = (req, res) => {
     res.render('index', {
@@ -24,9 +26,20 @@ exports.index = (req, res) => {
 };
 
 exports.leaderboard = (req, res) => {
-    res.render('leaderboard', {
-        title: 'Leaderboard'
-    });
+    User.find((err, user) =>{
+        if(err) return console.error(err);
+        res.render('leaderboard',{
+            title: 'Leaderboard',
+            allUsers: user
+        })
+    })
+    // User.find((err, user) ={
+    //     if(err) return console.error(err)
+    //     res.render('leaderboard', {
+            
+    //         title: 'Leaderboard'
+    //     });
+    // })
 };
 
 exports.login = (req, res) => {
@@ -40,6 +53,8 @@ exports.create = (req, res) => {
         title: 'Create Account'
     });
 };
+
+
 
 exports.createUser = (req, res) => {
     let salt = bcrypt.genSaltSync(10);
