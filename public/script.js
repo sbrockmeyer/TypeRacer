@@ -5,6 +5,8 @@ const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
 const recentCorrectPhraseArray = [];
 const quoteThing = "./quotes.json";
+let canType = false;
+
 quoteInputElement.value = null;
 
 function getQuote() {
@@ -23,36 +25,51 @@ function retrieveFromJsonArray(data) {
 quoteInputElement.addEventListener('input', () => {
     const quoteArray = quoteDisplayElement.querySelectorAll('span');
     const valueArray = quoteInputElement.value.split('');
-    let correct = true;
-
-    quoteArray.forEach((charSpan, index) => {
-        const char = valueArray[index];
-        if (char == null) {
-            charSpan.classList.remove('correct');
-            quoteInputElement.value = recentCorrectPhraseArray.join('');
-            charSpan.classList.remove('current');
-            correct = false;
-
-        } else if (char === charSpan.innerHTML) {
-            if (recentCorrectPhraseArray[recentCorrectPhraseArray.length-1] === char) {
-                charSpan.classList.add('current');
-            } else {
+    console.log(canType);
+    if (canType === true) {
+        quoteArray.forEach((charSpan, index) => {
+            const char = valueArray[index];
+            if (char == null) {
+                charSpan.classList.remove('correct');
+                quoteInputElement.value = recentCorrectPhraseArray.join('');
                 charSpan.classList.remove('current');
+    
+            } else if (char === charSpan.innerHTML) {
+                if (recentCorrectPhraseArray[recentCorrectPhraseArray.length-1] === char) {
+                    charSpan.classList.add('current');
+                } else {
+                    charSpan.classList.remove('current');
+                }
+                charSpan.classList.add('correct');
+                recentCorrectPhraseArray.push(char);
+                if (quoteArray.length == recentCorrectPhraseArray.length) {
+                    console.log("out");
+                    canType = false;
+                    quoteDisplayElement.innerHTML = "Game Over"
+                    quoteInputElement.value = recentCorrectPhraseArray.join('');
+                }
+            } else {
+                charSpan.classList.remove('correct');
+                charSpan.classList.remove('current');
+                quoteInputElement.value = recentCorrectPhraseArray.join('');
             }
-            charSpan.classList.add('correct');
-            recentCorrectPhraseArray.push(char);
-            correct = true;
-        } else {
-            charSpan.classList.remove('correct');
-            charSpan.classList.remove('current');
-            correct = false;
-            quoteInputElement.value = recentCorrectPhraseArray.join('');
-        }
-    })
+
+        })
+        
+    } else {
+        quoteInputElement.value = recentCorrectPhraseArray.join(''); 
+    }
     recentCorrectPhraseArray.length = 0;
 })
 
+function gameOver() {
+    canType = false;
+    quoteDisplayElement.innerHTML = "Game Over";
+    quoteInputElement.value = recentCorrectPhraseArray.join('');
+}
+
 async function renderQuote() {
+    canType = true;
     const quote = await getQuote();
     quoteDisplayElement.innerHTML = '';
     quote.split('').forEach(character => {
@@ -60,6 +77,7 @@ async function renderQuote() {
         charSpan.innerText = character;
         quoteDisplayElement.appendChild(charSpan);
     })
+    quoteInputElement.focus();
     quoteInputElement.value = null;
 }
 
