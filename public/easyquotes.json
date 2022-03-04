@@ -1,6 +1,6 @@
 
 [
-    {"quote":"Mary had a little lamb"},
-    {"quote":"noice"},
-    {"quote":"How much wood would a woodchuck chuck if a woodchuck could chuck wood"}
+    {"timer": 10,"quote":"Mary had a little lamb"},
+    {"timer": 10,"quote":"noice"},
+    {"timer": 10,"quote":"How much wood would a woodchuck chuck if a woodchuck could chuck wood"}
 ]

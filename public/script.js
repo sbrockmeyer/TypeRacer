@@ -5,14 +5,22 @@ const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
 const recentCorrectPhraseArray = [];
 const quoteThing = "./quotes.json";
+let timer = null;
+let timeRemaining = 0;
 let canType = false;
 
 quoteInputElement.value = null;
 
 function getQuote() {
-    return fetch(document.querySelector('input[name="difficulty_setting"]:checked').value)
+    const quote = fetch(document.querySelector('input[name="difficulty_setting"]:checked').value)
     .then(response => response.json())
-    .then(data => retrieveFromJsonArray(data).quote);
+    .then(data => {
+        timeRemaining = retrieveFromJsonArray(data).timer;
+        return retrieveFromJsonArray(data).quote;
+    });
+
+    console.log();
+    return quote;
 }
 
 function retrieveFromJsonArray(data) {
@@ -25,7 +33,7 @@ function retrieveFromJsonArray(data) {
 quoteInputElement.addEventListener('input', () => {
     const quoteArray = quoteDisplayElement.querySelectorAll('span');
     const valueArray = quoteInputElement.value.split('');
-    console.log(canType);
+    console.log(timeRemaining);
     if (canType === true) {
         quoteArray.forEach((charSpan, index) => {
             const char = valueArray[index];
@@ -66,11 +74,23 @@ function gameOver() {
     canType = false;
     quoteDisplayElement.innerHTML = "Game Over";
     quoteInputElement.value = recentCorrectPhraseArray.join('');
+    cancelInterval(timer);
+}
+
+function startTimer() {
+    timer = setInterval(updateTimer, 1000);
+    updateTimer();
+}
+
+function updateTimer() {
+    timeRemaining = timeRemaining - 1;
+
 }
 
 async function renderQuote() {
     canType = true;
     const quote = await getQuote();
+    console.log(quote);
     quoteDisplayElement.innerHTML = '';
     quote.split('').forEach(character => {
         const charSpan = document.createElement('span');
@@ -79,6 +99,7 @@ async function renderQuote() {
     })
     quoteInputElement.focus();
     quoteInputElement.value = null;
+    startTimer();
 }
 
 //Login Page Script
