@@ -33,13 +33,6 @@ exports.leaderboard = (req, res) => {
             allUsers: user
         })
     })
-    // User.find((err, user) ={
-    //     if(err) return console.error(err)
-    //     res.render('leaderboard', {
-            
-    //         title: 'Leaderboard'
-    //     });
-    // })
 };
 
 exports.login = (req, res) => {
