@@ -24,7 +24,7 @@ app.use(expressSession({
     resave: true
 }));
 
-app.get('/', routes.index);
+app.get('/', routes.game);
 app.get('/leaderboard', routes.leaderboard);
 app.get('/login', routes.login);
 app.get('/create', routes.create);

@@ -19,9 +19,9 @@ let userSchema = mongoose.Schema({
 
 let User = mongoose.model('Users_Collection', userSchema);
 
-exports.index = (req, res) => {
-    res.render('index', {
-        title: 'Home'
+exports.game = (req, res) => {
+    res.render('game', {
+        title: 'Game'
     });
 };
 
@@ -46,8 +46,6 @@ exports.create = (req, res) => {
         title: 'Create Account'
     });
 };
-
-
 
 exports.createUser = (req, res) => {
     let salt = bcrypt.genSaltSync(10);

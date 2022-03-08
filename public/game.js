@@ -1,4 +1,4 @@
-//Typing Game Script
+//Typing Game script
 
 const testQuote = 'Mary had a little lamb';
 const quoteDisplayElement = document.getElementById('quote');
@@ -13,11 +13,11 @@ quoteInputElement.value = null;
 
 function getQuote() {
     const quote = fetch(document.querySelector('input[name="difficulty_setting"]:checked').value)
-    .then(response => response.json())
-    .then(data => {
-        timeRemaining = retrieveFromJsonArray(data).timer;
-        return retrieveFromJsonArray(data).quote;
-    });
+        .then(response => response.json())
+        .then(data => {
+            timeRemaining = retrieveFromJsonArray(data).timer;
+            return retrieveFromJsonArray(data).quote;
+        });
 
     console.log();
     return quote;
@@ -41,9 +41,9 @@ quoteInputElement.addEventListener('input', () => {
                 charSpan.classList.remove('correct');
                 quoteInputElement.value = recentCorrectPhraseArray.join('');
                 charSpan.classList.remove('current');
-    
+
             } else if (char === charSpan.innerHTML) {
-                if (recentCorrectPhraseArray[recentCorrectPhraseArray.length-1] === char) {
+                if (recentCorrectPhraseArray[recentCorrectPhraseArray.length - 1] === char) {
                     charSpan.classList.add('current');
                 } else {
                     charSpan.classList.remove('current');
@@ -63,9 +63,9 @@ quoteInputElement.addEventListener('input', () => {
             }
 
         })
-        
+
     } else {
-        quoteInputElement.value = recentCorrectPhraseArray.join(''); 
+        quoteInputElement.value = recentCorrectPhraseArray.join('');
     }
     recentCorrectPhraseArray.length = 0;
 })
@@ -83,12 +83,12 @@ function startTimer() {
 }
 
 function updateTimer() {
-    timeRemaining = timeRemaining - 1; 
+    timeRemaining = timeRemaining - 1;
     if (timeRemaining >= 0) {
 
     } else {
         gameOver();
-    }    
+    }
 
 }
 
@@ -106,46 +106,3 @@ async function renderQuote() {
     quoteInputElement.value = null;
     startTimer();
 }
-
-//Login Page Script
-
-//-----
-
-// const username = document.getElementById('name');
-// const password = document.getElementById('pass');
-// const pw_verify = document.getElementById('pass-verify');
-
-// const errors = document.getElementById('errors');
-
-// let error_msg = "";
-// let no_errors = true;
-
-// const name_patt = /\S/;
-// const pass_patt = /\S/;
-
-// const validate = evt => {
-//     error_msg = "";
-//     no_errors = true;
-
-//     if(pw_verify.value != password.value) {
-//         error_msg = 'Must match Password';
-//         no_errors = false;
-//     };
-
-//     if(!pass_patt.test(password.value)) {
-//         error_msg = 'Password cannot be blank.';
-//         no_errors = false;
-//     };
-
-//     if(!name_patt.test(username.value)) {
-//         error_msg = 'Username cannot be blank.';
-//         no_errors = false;
-//     };
-
-//     errors.value = error_msg;
-// }
-
-// const mySubmit = () => {
-//     validate();
-//     return no_errors;
-// }

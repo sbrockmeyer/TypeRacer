@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Nav Bar CSS */
+/* ___Nav Bar CSS___ */
 
 :root {
     --navbar-bg-color: #2f3240;
@@ -44,29 +44,7 @@ nav ul li a {
     color: #ffffff;
 }
 
-/* Leaderboard Page CSS */
-
-table{
-    padding: 5px;
-    margin: auto;
-    background-color: #9fadb8;
-
-    /* border:2px solid #2d3141; */
-}
-th{
-    border:2px solid #2d3141;
-    background-color: #565c75;
-    padding: 15px;
-    color: #fff;
-}
-td{
-    border:2px solid #2d3141;
-    background-color: #939ece;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Typing Game CSS */
+/* ___Typing Game CSS___ */
 
 .quote-display {
     margin: auto;
@@ -99,4 +77,75 @@ td{
     color:green;
 }
 
-/* Login Page CSS */
+/* ___Leaderboard Page CSS___ */
+
+table{
+    padding: 5px;
+    margin: auto;
+    background-color: #9fadb8;
+
+    /* border:2px solid #2d3141; */
+}
+th{
+    border:2px solid #2d3141;
+    background-color: #565c75;
+    padding: 15px;
+    color: #fff;
+}
+td{
+    border:2px solid #2d3141;
+    background-color: #939ece;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ___Sign Up Page CSS___ */
+
+/* input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+} */
+
+#errors {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#errors p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: '✔';
+}
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: '✖';
+}

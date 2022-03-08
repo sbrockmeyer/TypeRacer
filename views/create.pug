@@ -5,20 +5,27 @@ block content
             br
             p Enter a Username:
                 br
-                input(type='text' name='username' id='name')
+                input(id='nameInput' type='text' name='username' required)
             br
             p Enter a Password:
                 br
-                input(type='password' name='password' id='pass')
-            br
-            p Confirm Password:
-                br
-                input(type='password' id='pass_verify')
+                input(
+                    id='passInput'
+                    type='password'
+                    name='password'
+                    pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+                    title='Must contain at least one uppercase letter, one number, and a minimum of 8 characters.'
+                    required
+                    )
             br
             p
                 br
                 input(type='submit' value='Create Account')
     br
-    div(id='errors') Error Message Here
+    div(id='errors')
+        h1 Password must contain the following:
+        p(class='invalid' id='upper') A capital letter
+        p(class='invalid' id='number') A number
+        p(class='invalid' id='count') Minimum of 8 characters
 
-    script(src='script.js')
+    script(src='signup.js')
