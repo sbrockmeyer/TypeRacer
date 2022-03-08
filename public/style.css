@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.title {
+    margin: 40px 0px;
+    text-align: center;
+}
+
 /* ___Nav Bar CSS___ */
 
 :root {
@@ -99,35 +104,49 @@ td{
     text-align: center;
 }
 
-/* ___Sign Up Page CSS___ */
+/* ___Login Page CSS___ */
 
-/* input {
-    width: 100%;
+.inputContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
+
+.input {
+    margin-top: 6px;
+    margin-bottom: 16px;
     padding: 12px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
 }
 
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-} */
+#loginBtn {
+    background-color: lightblue;
+}
+
+#createBtn {
+    background-color: lightsalmon;
+}
 
 #errors {
     display: none;
     background: #f1f1f1;
     color: #000;
     position: relative;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 15px;
+    margin-top: 15px;
 }
 
 #errors p {
-    padding: 10px 35px;
-    font-size: 18px;
+    padding: 7px 15%;
+    font-size: 16px;
+}
+
+#errorMsg {
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .valid {
@@ -136,7 +155,7 @@ input[type=submit] {
 
 .valid:before {
     position: relative;
-    left: -35px;
+    left: -15px;
     content: '✔';
 }
 
@@ -146,6 +165,6 @@ input[type=submit] {
 
 .invalid:before {
     position: relative;
-    left: -35px;
+    left: -15px;
     content: '✖';
 }

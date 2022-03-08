@@ -1,20 +1,23 @@
 extends layout
 
 block content
-    form(method='post' action='/login')
-        br
-        p(class='question') Username:
+    div(class='inputContainer')
+        form(method='post' action='/login')
             br
-            input(type='text')
-        p(class='question') Password:
+            p(class='question') Username:
+                br
+                input(class='input' type='text')
             br
-            input(type='password')
-        br
-        p
+            p(class='question') Password:
+                br
+                input(class='input' type='password')
             br
-            input(type='submit' value='Login')
-        p
+            p
+                br
+                input(class='input' id='loginBtn' type='submit' value='Login')
             br
-            a(href='/create') New user? Create an account
+            p
+                br
+                a(href='/create') New user? Create an account
     
     script(src='script.js')

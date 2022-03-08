@@ -1,15 +1,17 @@
 extends layout
 
 block content
-    form(method='post' action='/create')
+    div(class='inputContainer')
+        form(method='post' action='/create')
             br
             p Enter a Username:
                 br
-                input(id='nameInput' type='text' name='username' required)
+                input(class='input' id='nameInput' type='text' name='username' required)
             br
             p Enter a Password:
                 br
                 input(
+                    class='input'
                     id='passInput'
                     type='password'
                     name='password'
@@ -20,12 +22,12 @@ block content
             br
             p
                 br
-                input(type='submit' value='Create Account')
-    br
-    div(id='errors')
-        h1 Password must contain the following:
-        p(class='invalid' id='upper') A capital letter
-        p(class='invalid' id='number') A number
-        p(class='invalid' id='count') Minimum of 8 characters
+                input(class='input' id='createBtn' type='submit' value='Create Account')
+        br
+        div(id='errors')
+            h3(id='errorMsg') Password must contain the following:
+            p(class='invalid' id='upper') A capital letter
+            p(class='invalid' id='number') A number
+            p(class='invalid' id='count') Minimum of 8 characters
 
     script(src='signup.js')
