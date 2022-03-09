@@ -5,7 +5,7 @@
 }
 
 .title {
-    margin: 40px 0px;
+    margin: 35px 0px;
     text-align: center;
 }
 
@@ -113,9 +113,9 @@ td{
 }
 
 .input {
-    margin-top: 6px;
-    margin-bottom: 16px;
-    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -140,7 +140,7 @@ td{
 }
 
 #errors p {
-    padding: 7px 15%;
+    padding: 5px 15%;
     font-size: 16px;
 }
 

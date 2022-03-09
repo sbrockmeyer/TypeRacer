@@ -1,7 +1,6 @@
-//Sign Up Page script
-
 const password = document.getElementById('passInput');
 const upper = document.getElementById('upper');
+const lower = document.getElementById('lower');
 const number = document.getElementById('number');
 const count = document.getElementById('count');
 
@@ -15,6 +14,7 @@ password.onblur = function () {
 
 password.onkeyup = function () {
     const upperCheck = /[A-Z]/g;
+    const lowerCheck = /[a-z]/g;
     const numCheck = /[0-9]/g;
 
     if (password.value.match(upperCheck)) {
@@ -23,6 +23,14 @@ password.onkeyup = function () {
     } else {
         upper.classList.remove('valid');
         upper.classList.add('invalid');
+    }
+
+    if (password.value.match(lowerCheck)) {
+        lower.classList.remove('invalid');
+        lower.classList.add('valid');
+    } else {
+        lower.classList.remove('valid');
+        lower.classList.add('invalid');
     }
     
     if (password.value.match(numCheck)) {

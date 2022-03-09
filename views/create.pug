@@ -15,8 +15,8 @@ block content
                     id='passInput'
                     type='password'
                     name='password'
-                    pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-                    title='Must contain at least one uppercase letter, one number, and a minimum of 8 characters.'
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title='Must contain at least one uppercase letter, one lowercase letter, one number, and a minimum of 8 characters.'
                     required
                     )
             br
@@ -26,7 +26,8 @@ block content
         br
         div(id='errors')
             h3(id='errorMsg') Password must contain the following:
-            p(class='invalid' id='upper') A capital letter
+            p(class='invalid' id='upper') An uppercase letter
+            p(class='invalid' id='lower') A lowercase letter
             p(class='invalid' id='number') A number
             p(class='invalid' id='count') Minimum of 8 characters
 

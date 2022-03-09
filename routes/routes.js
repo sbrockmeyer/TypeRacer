@@ -60,3 +60,16 @@ exports.createUser = (req, res) => {
     });
     res.redirect('/login');
 };
+
+exports.loginUser = (req, res) => {
+    User.findOne({username: req.body.username})
+        .then(user => {if (user && bcrypt.compareSync(req.body.password, user.password)) {
+            req.session.user = {
+            isAuthenticated: true,
+            user
+        }
+        res.redirect('/private');
+    } else {
+        res.redirect('/');
+    }});
+};

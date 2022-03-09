@@ -1,5 +1,3 @@
-//Typing Game script
-
 const testQuote = 'Mary had a little lamb';
 const quoteDisplayElement = document.getElementById('quote');
 const quoteInputElement = document.getElementById('quoteInput');
