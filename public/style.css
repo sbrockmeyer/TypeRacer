@@ -109,7 +109,7 @@ td{
 .inputContainer {
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 40%;
 }
 
 .input {
@@ -167,4 +167,13 @@ td{
     position: relative;
     left: -15px;
     content: '✖';
+}
+
+.checkbox {
+    margin: auto 10px;
+}
+
+.showPassContainer {
+    display: flex;
+    flex-direction: row;
 }

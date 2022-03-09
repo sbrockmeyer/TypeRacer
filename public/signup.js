@@ -4,6 +4,8 @@ const lower = document.getElementById('lower');
 const number = document.getElementById('number');
 const count = document.getElementById('count');
 
+const show = document.getElementById('checkbox');
+
 password.onfocus = function () {
     document.getElementById('errors').style.display = 'block';
 }
@@ -47,5 +49,13 @@ password.onkeyup = function () {
     } else {
         count.classList.remove('valid');
         count.classList.add('invalid');
+    }
+}
+
+show.onclick = function() {
+    if(password.type === 'password') {
+        password.type = 'text';
+    } else {
+        password.type = 'password';
     }
 }
