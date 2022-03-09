@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');   
+const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 mongoose.connect('mongodb+srv://username:pass_word@pro150.rgfcp.mongodb.net/TypeRacerDB?retryWrites=true&w=majority', {
@@ -19,16 +19,22 @@ let userSchema = mongoose.Schema({
 
 let User = mongoose.model('Users_Collection', userSchema);
 
+exports.home = (req, res) => {
+    res.render('home', {
+        title: 'Home Page'
+    });
+};
+
 exports.game = (req, res) => {
     res.render('game', {
-        title: 'Game'
+        title: 'Type Racer'
     });
 };
 
 exports.leaderboard = (req, res) => {
-    User.find((err, user) =>{
-        if(err) return console.error(err);
-        res.render('leaderboard',{
+    User.find((err, user) => {
+        if (err) return console.error(err);
+        res.render('leaderboard', {
             title: 'Leaderboard',
             allUsers: user
         })
@@ -48,11 +54,12 @@ exports.create = (req, res) => {
 };
 
 exports.createUser = (req, res) => {
-    let salt = bcrypt.genSaltSync(10);
-    let hashPass = bcrypt.hashSync(req.body.password, salt);
+    //let salt = bcrypt.genSaltSync(10);
+    //let hashPass = bcrypt.hashSync(req.body.password, salt);
     let user = new User({
         username: req.body.username,
-        password: hashPass
+        // password: hashPass
+        password: req.body.password
     });
     user.save((err, user) => {
         if (err) return console.error(err);
@@ -62,14 +69,18 @@ exports.createUser = (req, res) => {
 };
 
 exports.loginUser = (req, res) => {
-    User.findOne({username: req.body.username})
-        .then(user => {if (user && bcrypt.compareSync(req.body.password, user.password)) {
+    User.findOne({ username: req.body.username, password: req.body.password })
+    .then(user => {
+        // if (user && bcrypt.compareSync(req.body.password, user.password)) {
+        if (user) {
             req.session.user = {
-            isAuthenticated: true,
-            user
+                isAuthenticated: true,
+                user
+            }
+            res.redirect('/game');
+        } else {
+            console.log('Invalid login');
+            res.redirect('/login');
         }
-        res.redirect('/private');
-    } else {
-        res.redirect('/');
-    }});
+    });
 };

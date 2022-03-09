@@ -51,18 +51,31 @@ nav ul li a {
 
 /* ___Typing Game CSS___ */
 
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .quote-display {
     margin: auto;
-    background-color: white;
     padding: .5rem;
+    height: auto;
+    width: 50%;
+    background-color: white;
     border:#2f3240 2px solid;
+    border-radius: 4px;
 }
 
 .quote-input {
     margin: auto;
-    background-color: white;
     padding: .5rem;
+    height: auto;
+    width: 50%;
+    background-color: white;
     border: #7f87ad 2px solid;
+    border-radius: 4px;
     resize: none;
     outline: none;
 }
@@ -72,14 +85,42 @@ nav ul li a {
 }
 
 .btn {
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    height: 50px;
+    width: 13%;
+    height: 40px;
+    background-color: lightgreen;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .correct {
     color:green;
+}
+
+.difficulty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 30%;
+    height: 100%;
+    background-color: burlywood;
+    border-radius: 4px;
+}
+
+.difficultyMsg {
+    font-size: 20px;
+}
+
+.optionContainer {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.label {
+    padding: 0px 10px;
 }
 
 /* ___Leaderboard Page CSS___ */
@@ -106,10 +147,19 @@ td{
 
 /* ___Login Page CSS___ */
 
+.checkbox {
+    margin: auto 10px;
+}
+
+.showPassContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .inputContainer {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 33%;
 }
 
 .input {
@@ -124,10 +174,14 @@ td{
 
 #loginBtn {
     background-color: lightblue;
+    font-size: 16px;
 }
 
+/* ___Sign Up Page CSS___ */
+
 #createBtn {
-    background-color: lightsalmon;
+    background-color: lightcoral;
+    font-size: 16px;
 }
 
 #errors {
@@ -167,13 +221,4 @@ td{
     position: relative;
     left: -15px;
     content: '✖';
-}
-
-.checkbox {
-    margin: auto 10px;
-}
-
-.showPassContainer {
-    display: flex;
-    flex-direction: row;
 }

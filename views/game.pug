@@ -1,18 +1,33 @@
 extends layout
 
 block content
-    div
+    div(class='gameContainer')
+        p(class='difficultyMsg') Choose your difficulty:
+        br
+        div(class='difficulty')
+            div(class='optionContainer')
+                input(class='radio' type='radio', name='difficulty_setting', id='easy', value='./easyquotes.json')
+                br
+                label(class='label' for='easy') Easy
+            div(class='optionContainer')
+                input(class='radio' type='radio', name='difficulty_setting', id='medium', value='./mediumquotes.json')
+                br
+                label(class='label' for='medium') Medium
+            div(class='optionContainer')
+                input(class='radio' type='radio', name='difficulty_setting', id='hard', value='./hardquotes.json')
+                br
+                label(class='label' for='hard') Hard
+        br
+        br
         div(class='quote-display' id='quote')
-        textarea(class='quote-input' id='quoteInput' autofocus)
+        textarea(class='quote-input' id='quoteInput' placeholder='Type here' autofocus)
         br
-        button(onclick='renderQuote()' class='btn') Click to Begin
+        button(class='btn' onclick='renderQuote()') Click to begin
         br
-        input(type='radio', name='difficulty_setting', id='easy', value='./easyquotes.json')
-        label(for='easy') Easy
-        br
-        input(type='radio', name='difficulty_setting', id='medium', value='./mediumquotes.json')
-        label(for='medium') Medium
-        br
-        input(type='radio', name='difficulty_setting', id='hard', value='./hardquotes.json')
-        label(for='hard') Hard
+        
+
+        p
+            br
+            a(href='/logout') Logout
+
     script(src='game.js')

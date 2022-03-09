@@ -6,6 +6,8 @@ const count = document.getElementById('count');
 
 const show = document.getElementById('checkbox');
 
+const alert = document.getElementById('alert');
+
 password.onfocus = function () {
     document.getElementById('errors').style.display = 'block';
 }

@@ -4,21 +4,21 @@ block content
     div(class='inputContainer')
         form(method='post' action='/create')
             br
-            p Enter a Username:
-                br
-                input(class='input' id='nameInput' type='text' name='username' required)
+            p(id='inputText') Enter a Username:
+            input(class='input' id='nameInput' type='text' name='username' required)
             br
-            p Enter a Password:
-                br
-                input(
-                    class='input'
-                    id='passInput'
-                    type='password'
-                    name='password'
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title='Must contain at least one uppercase letter, one lowercase letter, one number, and a minimum of 8 characters.'
-                    required
-                    )
+            br
+            p(id='inputText') Enter a Password:
+            input(
+                class='input'
+                id='passInput'
+                type='password'
+                name='password'
+                pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title='Must contain at least one uppercase letter, one lowercase letter, one number, and a minimum of 8 characters.'
+                required
+                )
+            br
             br
             div(class='showPassContainer')
                 input(class='checkbox' id='checkbox' type='checkbox')
@@ -26,7 +26,10 @@ block content
             p
                 br
                 input(class='input' id='createBtn' type='submit' value='Create Account')
-        br
+            br
+            p
+                br
+                a(href='/login') Go Back
         div(id='errors')
             h3(id='errorMsg') Password must contain the following:
             p(class='invalid' id='upper') An uppercase letter

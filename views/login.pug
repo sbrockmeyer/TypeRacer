@@ -4,13 +4,13 @@ block content
     div(class='inputContainer')
         form(method='post' action='/login')
             br
-            p Username:
-                br
-                input(class='input' type='text')
+            p(id='inputText') Username:
+            input(class='input' type='text' name='username')
             br
-            p Password:
-                br
-                input(class='input' id='password' type='password')
+            br
+            p(id='inputText') Password:
+            input(class='input' id='password' type='password' name='password')
+            br
             br
             div(class='showPassContainer')
                 input(class='checkbox' id='checkbox' type='checkbox')
