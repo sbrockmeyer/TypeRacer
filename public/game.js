@@ -27,7 +27,6 @@ function retrieveFromJsonArray(data) {
     return (quote);
 }
 
-
 quoteInputElement.addEventListener('input', () => {
     const quoteArray = quoteDisplayElement.querySelectorAll('span');
     const valueArray = quoteInputElement.value.split('');
@@ -87,7 +86,6 @@ function updateTimer() {
     } else {
         gameOver();
     }
-
 }
 
 async function renderQuote() {
