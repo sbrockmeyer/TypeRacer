@@ -29,6 +29,7 @@ exports.game = (req, res) => {
     res.render('game', {
         title: 'Type Racer'
     });
+    
 };
 
 exports.leaderboard = (req, res) => {
@@ -77,6 +78,7 @@ exports.loginUser = (req, res) => {
                 isAuthenticated: true,
                 user
             }
+            
             res.redirect('/game');
         } else {
             console.log('Invalid login');
